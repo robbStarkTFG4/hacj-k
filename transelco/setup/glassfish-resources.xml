@@ -11,4 +11,6 @@
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
     </jdbc-connection-pool>
     <jdbc-resource enabled="true" jndi-name="hackaton" object-type="user" pool-name="mysql_transtelco_rootPool"/>
+    <jdbc-resource enabled="true" jndi-name="trans" object-type="user" pool-name="mysql_transtelco_rootPool"/>
+    <jdbc-resource enabled="true" jndi-name="hackaton2" object-type="user" pool-name="mysql_transtelco_rootPool"/>
 </resources>
