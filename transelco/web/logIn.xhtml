@@ -4,7 +4,8 @@
                 template="./super.xhtml"
                 xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:p="http://primefaces.org/ui"
-                xmlns:h="http://xmlns.jcp.org/jsf/html">
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:define name="content">
         <div class="ui-grid-responsive ">
@@ -12,7 +13,8 @@
                 <div class="ui-grid-col-2"><span style="color: white">1</span></div>
                 <div class="ui-grid-col-8">
                     <h:form id="logear">
-                        <p:panel style="border-color: #00deff">
+                        <p:panel id="panel" style="border-color: #00deff">
+                             <p:growl id="g1" autoUpdate="true" showDetail="true" life="3000"/>
                             <div class="ui-grid-row" style="margin-top: 35px" >
                                 <div class="ui-grid-col-4"><p:outputLabel/></div>
                                 <div class="ui-grid-col-6">
@@ -23,21 +25,26 @@
                             <div class="ui-grid-row" style="margin-top: 15px">
                                 <div class="ui-grid-col-4"><p:outputLabel/></div>
                                 <div class="ui-grid-col-6">        
-                                    <p:inputText placeholder="Usuario" size="30" style="font-size: 18px" />
+                                    <p:inputText value="#{users.nameInput}"  validatorMessage="Solo letras y numeros {1-12 char}" placeholder="Usuario" size="30" style="font-size: 18px" >
+                                    <f:validateLength minimum="0" maximum="12"/>
+                                    <f:validateRegex pattern="[a-zA-Z0-9\-]*"  />
+                                    </p:inputText>
                                 </div>
                                 <div class="ui-grid-col-2"><p:outputLabel/></div>
                             </div>
                             <div class="ui-grid-row" >
                                 <div class="ui-grid-col-4"><p:outputLabel/></div>
                                 <div class="ui-grid-col-6">      
-                                    <p:password  placeholder="Contraseña" size="30" style="font-size: 18px" />
+                                    <p:password value="#{users.passInput}" placeholder="Contraseña" size="30" validatorMessage="{1-12 char}" style="font-size: 18px" >
+                                    <f:validateLength minimum="0" maximum="15"/>
+                                    </p:password>
                                 </div>
                                 <div class="ui-grid-col-2"><p:outputLabel/></div>
                             </div>
                             <div class="ui-grid-row" style="margin-top: 15px;" >
                                 <div class="ui-grid-col-4"><p:outputLabel/></div>
                                 <div id="logButton" class="ui-grid-col-6">        
-                                    <p:commandButton id="galatzia" styleClass="botoncito" style="width: 70%" value="Ingresar" action="#{util.loadData}" oncomplete="renderChart('container',  '${util.jsonData}');"/>
+                                    <p:commandButton id="boton"  style="width: 70%" value="Ingresar" action="#{users.login()}" update=":logear:panel" />
                                 </div>
                                 <div class="ui-grid-col-2"><p:outputLabel/></div>
                             </div>

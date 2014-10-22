@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+       
+        <h:outputStylesheet name="resources/css/grid2.css"/>
+    </h:head>
+    <h:body>
+        <h:form id="formaMat">
+            
+            <div class="ui-grid ui-grid-responsive">
+           <div class="ui-grid-row">
+           <div class="ui-grid-col-2"></div>
+           <div class="ui-grid-col-8">
+               <p:panel style="border: none"  id="panel" >
+            <p:growl id="g1" autoUpdate="true" showDetail="true" life="3000"/>
+                                    <div align="left">
+                                        <h:panelGrid id="grid" columns="2" cellspacing="5">
+
+                                            <p:outputLabel  value="Nombre: "  style="font-weight: bold;color: #162c42;font-size: small"/>
+                                            <p:inputText id="nombre" value="#{mat.nombre}" validatorMessage="Invalido, solo letras y numeros {1-15 char}" styleClass="ipnombre" style="font-weight: bold;" >
+                                                <f:validateLength minimum="1" maximum="15"/>
+                                                <f:validateRegex pattern="[a-zA-Z0-9\-]*"/>
+                                                <f:ajax render="mensaje" event="keyup"/>
+                                            </p:inputText>
+                                            <p:outputLabel/>
+                                            <h:message id="mensaje" for="nombre" style="font-size: xx-small;color: red"/>
+
+
+
+                                            <p:outputLabel value="No. Parte: " style="font-weight: bold;color: #162c42;font-size: small" />
+                                            <p:inputText id="noparte" style="font-weight: bold;" validatorMessage="Invalido, solo letras y numeros {1-15 char}" value="#{mat.noparte}"  >
+                                                <f:validateLength minimum="1" maximum="15"/>
+                                                <f:validateRegex pattern="[a-zA-Z0-9\-]*"/>
+                                                <f:ajax render="Nparte" event="keyup" />
+                                            </p:inputText>
+                                            <p:outputLabel/>
+                                            <h:message id="Nparte" for="noparte" style="font-size: xx-small;color: red"/>
+
+
+
+
+                                            <p:outputLabel value="Descripción: " style="font-weight: bold;color: #162c42;font-size: small" />                  
+                                            <p:inputTextarea id="desc" style="font-weight: bold;" value="#{mat.descripcion}" validatorMessage="Tamaño invalido" autoResize="false" maxlength="140" rows="2" styleClass="iparea" >
+                                                <f:validateLength minimum="0" maximum="45"/>
+                                                <f:validateRegex pattern="[a-zA-ZñÑ0-9\s-_@!#$%/()=?,;.:{*}¡°¬|`~^]+"/>
+                                                <f:ajax render="Marea" event="keyup" />
+                                            </p:inputTextarea>
+                                            <p:outputLabel/>
+                                            <h:message id="Marea" for="desc" style="font-size: xx-small;color: red"/>
+
+                                            <p:outputLabel  value="Marca: " style="font-weight: bold;color: #162c42;font-size: small" />
+                                            <p:inputText id="marca" style="font-weight: bold;" value="#{mat.marca}" validatorMessage="Invalido, solo letras y numeros {1-15 char}" styleClass="ipcantidad" > 
+                                                <f:validateLength minimum="0" maximum="15"/>
+                                                <f:validateRegex pattern="[a-zA-Z0-9\-]*"/>
+                                                <f:ajax render="marc" event="keyup" />    
+                                            </p:inputText>
+                                            <p:outputLabel/>
+                                            <h:message id="marc" for="marca" style="font-size: xx-small;color: red"/>
+
+                                          
+
+                                            <p:outputLabel  value="Stock " style="font-weight: bold;color: #162c42;font-size: small"/>
+                                            <p:inputText id="stock" style="font-weight: bold;" value="#{mat.stock}" validatorMessage="Solo numeros " required="false" styleClass="ipserie"  >
+
+                                                <f:validateRegex pattern="[0-9]+"  />
+                                                <f:ajax render="st" event="keyup" /> 
+                                            </p:inputText> 
+                                            <p:outputLabel/>
+                                            <h:message id="st" for="stock" style="font-size: xx-small;color: red"/>
+
+                                            <h:outputLabel value="SubFamilia: " style="font-weight: bold;color: #162c42;font-size: small"/>
+                                            <p:selectOneMenu   id="subFam"  value="#{mat.sf}"  required="true" requiredMessage="Selecciones subfamilia"  >
+                                        <f:selectItem itemLabel="--.--" itemValue="#{null}" noSelectionOption="true" /> 
+                                        <f:selectItems  value="#{mat.listSF}" var="ml"
+                                                        itemLabel="#{ml.descripcion}"
+                                                        itemValue="#{ml.idsubFamilia.toString()}" />  
+                                         </p:selectOneMenu>
+                                                  
+                                            <p:commandButton actionListener="#{mat.dialogimagen}" value="Cargar imagen" style="margin-left: 10%" >
+                                           <p:ajax event="dialogReturn"  update=":formaMat:panel"  />  
+                                    </p:commandButton>
+                                            <p:commandButton value="Agregar" disabled="#{mat.disableguardar}" actionListener="#{mat.agregarmat()}" update=":formaMat" />
+                                        </h:panelGrid> 
+                                    </div>
+                                </p:panel>
+            
+            
+               
+               
+               
+           </div>
+        <div class="ui-grid-col-2"></div>
+        
+    </div>
+</div>
+            
+            
+            
+            
+          
+            
+            
+            
+        </h:form>
+    </h:body>
+</html>
+
