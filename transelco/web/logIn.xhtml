@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./super.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <ui:define name="content">
+        <div class="ui-grid-responsive ">
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2"><span style="color: white">1</span></div>
+                <div class="ui-grid-col-8">
+                    <h:form id="logear">
+                        <p:panel style="border-color: #00deff">
+                            <div class="ui-grid-row" style="margin-top: 35px" >
+                                <div class="ui-grid-col-4"><p:outputLabel/></div>
+                                <div class="ui-grid-col-6">
+                                    <h3 style="color: gray">Iniciar Sesion</h3>
+                                </div>
+                                <div class="ui-grid-col-2"><p:outputLabel/></div>
+                            </div>
+                            <div class="ui-grid-row" style="margin-top: 15px">
+                                <div class="ui-grid-col-4"><p:outputLabel/></div>
+                                <div class="ui-grid-col-6">        
+                                    <p:inputText placeholder="Usuario" size="30" style="font-size: 18px" />
+                                </div>
+                                <div class="ui-grid-col-2"><p:outputLabel/></div>
+                            </div>
+                            <div class="ui-grid-row" >
+                                <div class="ui-grid-col-4"><p:outputLabel/></div>
+                                <div class="ui-grid-col-6">      
+                                    <p:password  placeholder="Contraseña" size="30" style="font-size: 18px" />
+                                </div>
+                                <div class="ui-grid-col-2"><p:outputLabel/></div>
+                            </div>
+                            <div class="ui-grid-row" style="margin-top: 15px;" >
+                                <div class="ui-grid-col-4"><p:outputLabel/></div>
+                                <div id="logButton" class="ui-grid-col-6">        
+                                    <p:commandButton id="galatzia" styleClass="botoncito" style="width: 70%" value="Ingresar" action="#{util.loadData}" oncomplete="renderChart('container',  '${util.jsonData}');"/>
+                                </div>
+                                <div class="ui-grid-col-2"><p:outputLabel/></div>
+                            </div>
+                            <div class="ui-grid-row" style="margin-top: 5px;" >
+                                <div class="ui-grid-col-3"><p:outputLabel/></div>
+                                <div  class="ui-grid-col-7">   
+                                    <div class="ui-grid-col-3"><p:outputLabel/></div>
+                                    <div class="ui-grid-col-8">
+                                        <span style="font-size: 12px;" ><h:commandLink value="recuperar contraseña " style="color: gray"/> <span style="color: gray">| </span> <h:commandLink action="register?faces-redirect=true" value="registrarse" style="color: gray"/></span>
+                                    </div>
+                                    <div class="ui-grid-col-1"><p:outputLabel/></div>
+                                </div>
+                                <div class="ui-grid-col-2"><p:outputLabel/></div>
+                            </div>
+
+                        </p:panel>
+                    </h:form>
+                </div>
+                <div class="ui-grid-col-2"><span style="color: white">1</span></div>
+            </div>
+        </div>
+    </ui:define>
+
+</ui:composition>

@@ -1,0 +1,599 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <title>Facelets Template</title>
+        
+         <style type="text/css">
+            .ui-menu-list {
+                position: static;
+                margin-left: 50px;
+            }
+
+            .cl {
+                margin: 0px;
+                padding: 0;
+                font-size: 12px;
+                color: #616161;
+
+            }
+
+            .findyourCarBadgeWrapper .findyourCarBadgeBox {
+                background: none repeat scroll 0 0 #333333;
+                border-radius: 4px;
+                bottom: 25px;
+                padding-left: 20px;
+                padding-top: 10px;
+                position: absolute;
+                width: 100%;
+            }
+
+            .carItem {
+                height: 200px;
+                text-align: center;
+                width: 200px;
+            }
+
+            .centro{
+                width: 50%;
+                margin: 0 auto;
+                font-size: 35px;
+            }
+
+            .margen{
+                margin-top: 10px;
+            }
+
+            .ui-inputfield.ui-state-error, .ui-widget-header .ui-inputfield.ui-state-error, .ui-widget-content .ui-inputfield.ui-state-error {
+                border: 1px solid #FF0000 ;
+
+            }
+
+            .botoncito {
+
+                background-image: none !important;
+                border-radius: 6px !important;
+                font-size: 18px !important;
+                line-height: 1.33 !important;
+                padding: 10px 16px !important;
+                background-color: #428bca !important;
+                border-color: #357ebd !important;
+                color: #fff !important;
+            }
+
+            #logear\:galatzia:hover{
+                background-color: #3071a9 !important;
+                border-color: #285e8e !important;
+            }
+
+
+
+
+
+
+
+
+            body {
+                font-family: "Open Sans",sans-serif;
+            }
+            #wrapper {
+                background: none repeat scroll 0 0 #202020;
+                width: 100%;
+            }
+            #page-wrapper {
+                background: none repeat scroll 0 0 #f3f3f3;
+                min-height: 600px;
+                padding: 15px;
+            }
+            #page-inner {
+                background-color: #fff !important;
+                margin: 10px 20px 10px 0;
+                min-height: 1200px;
+                padding: 10px;
+                width: 100%;
+            }
+            .text-center {
+                text-align: center;
+            }
+            .no-boder {
+                border: 1px solid #f3f3f3;
+            }
+            h2 {
+                color: #f00;
+            }
+            h4 {
+                padding-top: 10px;
+            }
+            .square-btn-adjust {
+                border: 0 solid transparent;
+                border-radius: 0;
+            }
+            p {
+                font-size: 16px;
+                line-height: 25px;
+                padding-top: 20px;
+            }
+            .panel-back {
+                background-color: #f8f8f8;
+            }
+            .noti-box {
+                min-height: 100px;
+                padding: 20px;
+            }
+            .noti-box .icon-box {
+                display: block;
+                float: left;
+                font-size: 40px;
+                height: 70px;
+                line-height: 75px;
+                margin: 0 15px 10px 0;
+                text-align: center;
+                vertical-align: middle;
+                width: 70px;
+            }
+            .text-box p {
+                margin: 0 0 3px;
+            }
+            .main-text {
+                font-size: 25px;
+                font-weight: 600;
+            }
+            .set-icon {
+                border-radius: 50px;
+            }
+            .bg-color-green {
+                background-color: #00ce6f;
+                color: #fff;
+            }
+            .bg-color-blue {
+                background-color: #a95df0;
+                color: #fff;
+            }
+            .bg-color-red {
+                background-color: #db0630;
+                color: #fff;
+            }
+            .bg-color-brown {
+                background-color: #b94a00;
+                color: #fff;
+            }
+            .icon-box-right {
+                display: block;
+                float: right;
+                font-size: 40px;
+                height: 70px;
+                line-height: 75px;
+                margin: 0 15px 10px 0;
+                text-align: center;
+                vertical-align: middle;
+                width: 70px;
+            }
+            .main-temp-back {
+                background: none repeat scroll 0 0 #8702a8;
+                color: #ffffff;
+                font-size: 16px;
+                font-weight: 300;
+                text-align: center;
+            }
+            .main-temp-back .text-temp {
+                font-size: 40px;
+            }
+            .back-dash {
+                background-color: #2ea7eb;
+                border-radius: 0;
+                color: #fff;
+                font-size: 20px;
+                font-weight: 500;
+                padding: 20px;
+            }
+            .back-dash p {
+                color: #fff;
+                font-size: 13px;
+                line-height: 25px;
+                padding-top: 16px;
+                text-align: justify;
+            }
+            .back-footer-green {
+                background-color: #009b50;
+                border-top: 0 solid #fff;
+            }
+            .back-footer-red {
+                background-color: #af0000;
+                border-top: 0 solid #fff;
+            }
+            .color-bottom-txt {
+                color: #000;
+                font-size: 16px;
+                line-height: 30px;
+            }
+            .chat-panel .panel-body {
+                height: 450px;
+                overflow-y: scroll;
+            }
+            .chat-box {
+                list-style: none outside none;
+                margin: 0;
+                padding: 0;
+            }
+            .chat-box li {
+                border-bottom: 1px dotted #808080;
+                margin-bottom: 15px;
+                padding-bottom: 5px;
+            }
+            .chat-box li.left .chat-body {
+                margin-left: 90px;
+            }
+            .chat-box li .chat-body p {
+                color: #8d8888;
+                margin: 0;
+            }
+            .chat-img > img {
+                margin-left: 20px;
+            }
+            .user-image {
+                border-radius: 10px;
+                margin: 25px auto;
+                max-height: 170px;
+                max-width: 170px;
+            }
+
+            .active-menu {
+                background-color: #c90000 !important;
+            }
+            .arrow {
+                float: right;
+            }
+            .fa.arrow:before {
+                content: "?";
+            }
+            .active > a > .fa.arrow:before {
+                content: "?";
+            }
+
+
+            .btn-circle {
+                border-radius: 25px;
+                font-size: 12px;
+                height: 50px;
+                line-height: 1.42857;
+                padding: 6px 0;
+                text-align: center;
+                width: 50px;
+            }
+            @media (min-width: 768px) {
+                #page-wrapper {
+                    margin: 0 0 0 260px;
+                    min-height: 1200px;
+                    padding: 15px 30px;
+                }
+
+                .back-dash {
+                    background-color: #2ea7eb !important ;
+                    border-radius: 0 !important ;
+                    color: #fff  !important ;
+                    font-size: 20px !important ;
+                    font-weight: 500 !important;
+                    padding: 40px !important ;
+                }
+
+                .letters{
+                    padding: 20px !important;
+                    color: #fff !important;
+                }
+            </style>
+        
+        
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"></link>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"></link>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"></link>
+
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <link href="resources/css/grid2.css" rel="stylesheet"></link>
+
+        <script src="http://code.highcharts.com/highcharts.js"></script>
+        <script src="http://code.highcharts.com/modules/exporting.js"></script>
+    </h:head>
+
+ <h:body class="cl " style="background-color: white" >
+
+            <div id="top" >
+                <ui:insert name="top">
+                    <h:form>
+
+                        <div class="ui-grid ui-grid-responsive " >
+                            <div class="ui-grid-row">
+                                <div class="ui-grid-col-6">
+                                    <p:commandLink action="index?faces-redirect=true">
+                                        <p:graphicImage value="resources/images/trader.jpg"/>
+                                    </p:commandLink>
+                                </div>
+
+                                <div class="ui-grid-col-6">
+                                    <div style="margin-top: 20px;margin-bottom: 10px;">
+                                        <div style="font-size: 11px;" class="container">
+                                            <p:commandLink  id="logIn"  style="margin-right: 2px;"  action="logIn?faces-redirect=true"  >
+                                                <h:outputText value=" iniciar sesion" styleClass="icon fa fa-user fa-lg" style="margin:0 auto;" />
+                                            </p:commandLink>
+                                            <p:outputLabel  value="|"  />
+                                            <p:commandLink style="margin-left: 2px;" action="register?faces-redirect=true">
+                                                <h:outputText value=" registrarse" styleClass="icon fa fa-shopping-cart fa-lg" style="margin:0 auto;" />
+                                            </p:commandLink>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div role="navigation" class="navbar navbar-inverse navbar-default">
+                            <div class="container-fluid">
+                                <div class="navbar-header">
+                                    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <h:commandLink value="AutoParts" styleClass="navbar-brand" style="margin-left: 15px;" action="index?faces-redirect=true" />
+                                </div>
+                                <div class="navbar-collapse collapse">
+                                    <ul class="nav navbar-nav">
+                                        <li class="active"><h:commandLink value="Link" action="register?faces-reditect=true"/></li>
+                                        <li><a href="#">Link</a></li>
+                                        <li><a href="#">Link</a></li>
+                                        <li class="dropdown">
+                                            <a data-toggle="dropdown" class="dropdown-toggle" >Dropdown <span class="caret"></span></a>
+                                            <ul role="menu" class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li class="dropdown-header">Nav header</li>
+                                                <li><a href="#">Separated link</a></li>
+                                                <li><a href="#">One more separated link</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                </div><!--/.nav-collapse -->
+                            </div><!--/.container-fluid -->
+                        </div>
+
+
+
+                    </h:form>
+                </ui:insert>
+            </div>
+
+            <div id="content" >
+                <ui:insert name="content">
+                    <div style="margin-top: 15px;  " class="ui-grid ui-grid-responsive ">
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-1 "  ></div>
+
+                            <div class="ui-grid-col-5 " style="background-color: #333333;" >  
+                                <h:form>
+                                    <p:outputLabel value="Busca Partes" style="font-size: 40px; color: white; margin-bottom: 20px; margin-left: 15px;"/>
+                                    <h:panelGrid columns="2" style="width: 50%;
+                                                 margin: 0 auto; font-size: 18px;" cellspacing="15px" cellpadding="10px" >
+
+                                        <p:selectOneMenu  id="console" value="#{selectOneMenuView.console}" style="margin-right: 10px">
+                                            <f:selectItem itemLabel="Select One" itemValue="" />
+                                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                        </p:selectOneMenu>
+
+                                        <p:selectOneMenu id="car" value="#{selectOneMenuView.car}">
+                                            <f:selectItem itemLabel="Select One" itemValue="" />
+                                            <f:selectItems value="#{selectOneMenuView.cars}" />
+                                        </p:selectOneMenu>
+
+                                        <p:outputLabel value="Ej: Mazda" style="font-size: 15px; margin-right: 10px"/>
+                                        <p:outputLabel value="Ej: Mazda3" style="font-size: 15px" />
+
+                                        <p:selectOneMenu id="op2" value="#{selectOneMenuView.console}" style="margin-right: 10px">
+                                            <f:selectItem itemLabel="Select One" itemValue=""   />
+                                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One"  />
+                                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                        </p:selectOneMenu>
+
+                                        <p:commandButton value="Buscar"  />
+                                        <p:commandLink value="Mas Filtros"  style="color: #39c1c8" />
+                                    </h:panelGrid>
+
+
+                                    <h:panelGrid columns="3" style="width: 50%;
+                                                 margin: 0 auto; font-size: 10px; margin-bottom: 5px; " cellpadding="5px" >
+
+                                        <p:commandButton value="opcion1" icon="ui-icon-star"/>
+                                        <p:commandButton value="opcion2" icon="ui-icon-flag" />
+                                        <p:commandButton value="opcion3" icon="ui-icon-bookmark"/>
+
+                                    </h:panelGrid>
+
+                                </h:form>
+                            </div>
+
+                            <div class="ui-grid-col-1 "></div>
+
+                            <div class="ui-grid-col-5" >
+
+
+                                <div style="margin-left: 15px; margin-top: 15px;">
+                                    <p:panel id="sports" style="width: 80%;margin-bottom: 15px; " header="Sports">
+                                        <h:outputText value="Sports Content" />
+                                    </p:panel>
+
+                                    <p:panel id="finance" style="width: 80%;" header="Finance">
+                                        <h:outputText value="Finance Content" />
+                                    </p:panel>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 25px; " class="ui-grid ui-grid-responsive">
+                        <h:form>
+                            <div class="ui-grid-row">
+                                <div class="ui-grid-col-1 "></div>
+
+                                <div class="ui-grid-col-5 ">
+                                    <p:outputLabel value="Mas Vendido" style="font-size: 40px;margin-bottom: 5px;margin-left: 5px; margin-bottom: 10px;"/>
+                                    <p:dataGrid var="car" value="#{util.getCars}" columns="3" layout="grid" style="margin-top: 5px;"
+                                                rows="3" paginator="true" id="cars"
+                                                paginatorTemplate=" {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} "
+                                                rowsPerPageTemplate="5,10,15">
+
+                                        <p:panel header="#{car.randomId}" style="text-align:center">
+                                            <h:panelGrid columns="1" style="width:100%; text-align: center;" >
+
+                                                <p:graphicImage value="resources/images/selyR.jpg"/>
+                                                <h:outputText value="#{car.randomBrand}" />
+                                                <h:outputText value="#{car.randomYear}" />
+
+                                                <p:commandLink   title="View Detail">
+                                                    <h:outputText styleClass="ui-icon ui-icon-search" style="margin:0 auto;" />
+                                                </p:commandLink>
+
+                                            </h:panelGrid>
+                                        </p:panel>
+
+                                    </p:dataGrid>
+                                </div>
+
+                                <div class="ui-grid-col-1 "></div>
+
+                                <div class="ui-grid-col-5" >
+                                    <p:outputPanel deferred="true" style="margin-top: 45px;">
+                                        <h3><span >Encuesta</span></h3>
+                                        <p><span >Que te parece el servicio?</span></p>
+                                        <h:panelGrid columns="1" style="margin-bottom:10px" cellpadding="5">
+
+                                            <p:selectOneRadio id="console" layout="grid" columns="1" >
+                                                <f:selectItem itemLabel="Bueno" itemValue="Xbox One"  />
+                                                <f:selectItem itemLabel="Regular" itemValue="PS+" />
+                                                <f:selectItem itemLabel="Malo" itemValue="PS+" />          
+                                            </p:selectOneRadio>
+                                            <p:commandButton value="Enviar" style="margin-top: 5px"/>
+                                        </h:panelGrid>
+                                    </p:outputPanel>
+                                </div>
+
+
+                            </div>
+                        </h:form>
+                    </div>
+
+                    <div style="margin-top: 25px; " class="ui-grid ui-grid-responsive">
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-1"> </div>
+                            <div class="ui-grid-col-5">
+                                <h:form>
+                                    <p:panel>
+                                        <h:panelGrid columns="2" cellspacing="10px">
+                                            <div >
+                                                <h4>Algun Articulo o Noticia</h4>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                            </div>
+
+                                            <div> 
+                                                <p:graphicImage value="resources/images/godfather1.jpg"/>
+                                            </div>
+
+                                        </h:panelGrid>
+                                        <p:commandLink value="Leer Mas" style="font-size: 14px; margin-left: 5px;" />
+                                    </p:panel>
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </ui:insert>
+            </div>
+
+
+            <div id="bottom" >
+                <ui:insert name="bottom">
+                    <div  class="ui-grid ui-grid-responsive " style="background-color:#162c42; margin-top: 10px;">
+                        <div class="ui-grid-row container">
+
+                            <div class="ui-grid-col-4">
+                                <h3>Categories</h3>
+                                <ul>
+                                    <li><a href="#">Shoes</a></li>
+                                    <li><a href="#">Clothing</a></li>
+                                    <li><a href="#">Accessories</a></li>
+                                    <li><a href="#">Men</a></li>
+                                    <li><a href="#">Women</a></li>
+                                    <li><a href="#">Kids</a></li>
+                                    <li><a href="#">Pets</a></li>
+                                </ul>
+                            </div>
+                            <div class="ui-grid-col-4">
+                                <h3>Styles</h3>
+                                <ul>
+                                    <li><a href="#">Athletic</a>  </li>
+                                    <li><a href="#">Casual</a></li>
+                                    <li><a href="#">Dress</a></li>
+                                    <li><a href="#">Everyday</a></li>
+                                    <li><a href="#">Other Days</a></li>
+                                    <li><a href="#">Alternative</a></li>
+                                    <li><a href="#">Otherwise</a></li>
+                                </ul>
+                            </div>
+                            <div class="ui-grid-col-4">
+                                <h3>Other</h3>
+                                <ul>
+                                    <li><a href="#">Link</a></li>
+                                    <li><a href="#">Another link</a></li>
+                                    <li><a href="#">Link again</a></li>
+                                    <li><a href="#">Try this</a></li>
+                                    <li><a href="#">Don't you dare</a></li>
+                                    <li><a href="#">Oh go ahead</a></li>
+                                </ul>
+                            </div>
+
+
+
+                            <div class="about ui-grid-col-4">
+                                <h3>About Us</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse euismod congue bibendum. Aliquam erat volutpat. Phasellus eget justo lacus. Vivamus pharetra ullamcorper massa, nec ultricies metus gravida egestas. Duis congue viverra arcu, ac aliquet turpis rutrum a. Donec semper vestibulum dapibus. Integer et sollicitudin metus. Vivamus at nisi turpis. Phasellus vel tellus id felis cursus hendrerit.</p>
+                                <p><a class="btn btn-default btn-xs pull-right" href="#">Learn more <span class="fa fa-arrow-circle-right"></span></a></p>
+                            </div>
+
+                        </div><!-- /.row -->
+                        <div class="ui-grid-row" style="margin-bottom: 20px;">
+                            <div class="ui-grid-col-12">
+                                <h:panelGrid columns="3" styleClass="centro" cellspacing="20px">
+                                    <a href="#" title="Twitter Profile"><span class="icon fa fa-twitter"></span></a>
+                                    <a href="#" title="Facebook Page"><span class="icon fa fa-facebook"></span></a>
+                                    <a href="#" title="Google+ Profile"><span class="icon fa fa-google-plus"></span></a>
+                                </h:panelGrid>
+                            </div>
+                        </div>
+
+
+                    </div><!-- /.container -->
+                </ui:insert>
+            </div>
+
+        </h:body>
+
+
+</html>
