@@ -289,6 +289,51 @@
                 }
             </style>
 
+            <script>
+                $(function () {
+                    $('#container').highcharts({
+                        title: {
+                            text: 'PEDIDOS DEL MES',
+                            x: -20 //center
+                        },
+                        subtitle: {
+                            text: '',
+                            x: -20
+                        },
+                        xAxis: {
+                            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                        },
+                        yAxis: {
+                            title: {
+                                text: 'PEDIDOS'
+                            },
+                            plotLines: [{
+                                    value: 0,
+                                    width: 1,
+                                    color: '#808080'
+                                }]
+                        },
+                        tooltip: {
+                            valueSuffix: '°C'
+                        },
+                        legend: {
+                            layout: 'vertical',
+                            align: 'right',
+                            verticalAlign: 'middle',
+                            borderWidth: 0
+                        },
+                        series: [{
+                                name: 'equipos instalacion',
+                                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+                            }, {
+                                name: 'equipos redes',
+                                data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+                            }]
+                    });
+                });
+            </script>
+
 
             <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"></link>
             <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"></link>
@@ -335,37 +380,56 @@
 
 
                         <div role="navigation" class="navbar navbar-inverse navbar-default">
-                            <div class="container-fluid">
-                                <div class="navbar-header">
-                                    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
-                                        <span class="sr-only">Toggle navigation</span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                    <h:commandLink value="AutoParts" styleClass="navbar-brand" style="margin-left: 15px;" action="index?faces-redirect=true" />
-                                </div>
-                                <div class="navbar-collapse collapse">
-                                    <ul class="nav navbar-nav">
-                                        <li class="active"><h:commandLink value="Link" action="register?faces-reditect=true"/></li>
-                                        <li><a href="#">Link</a></li>
-                                        <li><a href="#">Link</a></li>
-                                        <li class="dropdown">
-                                            <a data-toggle="dropdown" class="dropdown-toggle" >Dropdown <span class="caret"></span></a>
-                                            <ul role="menu" class="dropdown-menu">
-                                                <li><a href="#">Action</a></li>
-                                                <li><a href="#">Another action</a></li>
-                                                <li><a href="#">Something else here</a></li>
-                                                <li class="divider"></li>
-                                                <li class="dropdown-header">Nav header</li>
-                                                <li><a href="#">Separated link</a></li>
-                                                <li><a href="#">One more separated link</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
 
-                                </div><!--/.nav-collapse -->
-                            </div><!--/.container-fluid -->
+                            <div class="navbar-header">
+                                <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a href="#" rel="home" class="navbar-brand">Brand</a>
+                            </div>
+
+                            <div class="collapse navbar-collapse">
+
+                                <ul class="nav navbar-nav">
+                                    <li><a href="#">Link</a></li>
+                                    <li><a href="#">Link</a></li>
+                                    <li><a href="#">Link</a></li>
+                                    <li class="dropdown">
+                                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown <b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">Separated link</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">One more separated link</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                                <div class="col-sm-3 col-md-3 pull-right">
+                                    <div class="navbar-text">Buscar</div>
+                                    <h:form> 
+                                        <p:autoComplete   value="#{sear.caja}" id="sr" completeMethod="#{sear.autoComplete}" 
+                                                          var="p" itemLabel="#{p.noParte}" itemValue="#{p}" title="#Parte o Nombre" converter="mtl" minQueryLength="3" 
+                                                          forceSelection="true" maxResults="15" queryDelay="500"
+                                                          >
+                                            <p:column>  
+                                                #{p.nombre} - #{p.noParte}  
+                                            </p:column>
+
+                                        </p:autoComplete>  
+                                        <p:commandLink action="#{sear.forward}" >
+                                            <h:outputText styleClass="icon fa fa-user fa-lg" style="color: white;margin-left: 5px;" />
+                                        </p:commandLink>
+                                    </h:form>
+
+                                </div>
+
+                            </div>
                         </div>
 
 

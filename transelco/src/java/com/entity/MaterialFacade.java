@@ -5,9 +5,11 @@
  */
 package com.entity;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -48,5 +50,27 @@ public class MaterialFacade extends AbstractFacade<Material> {
       
 
     } 
+     
+      public List<Material> autoQueryName(String patron) {
+
+        TypedQuery<Material> query = em.createQuery("SELECT c FROM Material c WHERE c.nombre LIKE :patron", Material.class);
+        query.setParameter("patron", patron.toLowerCase() + "%");
+
+        List<Material> res = query.getResultList();
+
+        return res;
+
+    }
+
+    public List<Material> autoQueryPartNumber(String patron) {
+        //
+        TypedQuery<Material> query = em.createQuery("SELECT c FROM Material c WHERE c.noParte LIKE :patron", Material.class);
+        query.setParameter("patron", patron.toLowerCase() + "%");
+
+        List<Material> res = query.getResultList();
+
+        return res;
+    }
+     
     
 }

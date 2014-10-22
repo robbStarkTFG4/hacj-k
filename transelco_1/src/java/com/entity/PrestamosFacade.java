@@ -5,9 +5,13 @@
  */
 package com.entity;
 
+import java.util.Date;
+import java.util.List;
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -15,6 +19,10 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class PrestamosFacade extends AbstractFacade<Prestamos> {
+
+    @EJB
+    UsuarioFacade user;
+
     @PersistenceContext(unitName = "transelcoPU")
     private EntityManager em;
 
@@ -26,5 +34,20 @@ public class PrestamosFacade extends AbstractFacade<Prestamos> {
     public PrestamosFacade() {
         super(Prestamos.class);
     }
-    
+
+    public List<Prestamos> findBy(String userId) {
+        TypedQuery<Prestamos> query = em.createQuery("SELECT c FROM Prestamos c WHERE c.usuario.idTrabajador = :id", Prestamos.class);
+        query.setParameter("id", userId);
+
+        return query.getResultList();
+    }
+
+    public Prestamos create() {
+        Prestamos temp = new Prestamos();
+        temp.setFechaPrestamo(new Date());
+        temp.setUsuario(user.find(new UsuarioPK(1, "marco isaac")));
+        this.create();
+        return temp;
+    }
+
 }
