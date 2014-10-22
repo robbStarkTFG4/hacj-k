@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./super.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns="http://www.w3.org/1999/xhtml"
+
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <ui:define name="content">
+        <div class="ui-grid-responsive container ">
+            <h:form>
+                <p:panel style="border-color: #5fb3bd;" >
+                    <div class="ui-grid-row container">
+                        <div class="ui-grid-col-12">
+                            <h2>Datos Generales</h2>
+                        </div>
+                    </div>
+                    <div class="ui-grid-row container">
+                        <div class="ui-grid-col-12 container">
+                            <p:messages autoUpdate="true" style="width: 80%"/>
+                        </div>
+                    </div>
+                    <div class="ui-grid-row ">
+                        <div class="ui-grid-col-1"></div>
+
+                        <div class="ui-grid-col-10 container">
+
+                            <div class="ui-grid-col-5 ">
+                                <div class="ui-grid-row margen">
+                                    <p:outputLabel value="Nombre"/>  
+                                </div>
+                                <div class="ui-grid-row">
+                                    <p:inputText id="regNom" value="#{reg.register.nombre}" size="30" required="true" validatorMessage="Campo Nombre: escribe nombre valido" requiredMessage="escribe nombre">
+                                       <f:validateRegex pattern="[a-zA-Z\s]*"/>
+                                    </p:inputText>  
+                                </div>
+                                <div class="ui-grid-row margen">
+                                    <p:outputLabel value="Apellido Paterno"/>  
+                                </div>
+                                <div class="ui-grid-row">
+                                    <p:inputText id="regPat" size="30" required="true"/>  
+                                </div>
+                                <div class="ui-grid-row margen">
+                                    <p:outputLabel value="Apellido Materno"/>  
+                                </div>
+                                <div class="ui-grid-row">
+                                    <p:inputText id="regMat" size="30" required="true"/>  
+                                </div>
+                                <div class="ui-grid-row margen">
+                                    <p:outputLabel value="Correo Electronico"/>  
+                                </div>
+                                <div class="ui-grid-row">
+                                    <p:inputText id="regMail" size="30" required="true"/>  
+                                </div>
+                                <div class="ui-grid-row margen">
+                                    <p:outputLabel value="Confirmar Correo Electronico"/>  
+                                </div>
+                                <div class="ui-grid-row">
+                                    <p:inputText id="regMail2" size="30" required="true"/>  
+                                </div>
+                                <div class="ui-grid-row margen">
+                                    <p:outputLabel value="Direccion"/>  
+                                </div>
+                                <div class="ui-grid-row">
+                                    <p:inputText  id="regDir" size="30" required="true"/>  
+                                </div>
+                                <div class="ui-grid-row margen">
+                                    <p:outputLabel value="Direccion2"/>  
+                                </div>
+                                <div class="ui-grid-row">
+                                    <p:inputText id="regDir2" size="30" required="true"/>  
+                                </div>
+                                <div class="ui-grid-row margen">
+                                    <p:outputLabel value="Estado"/>  
+                                </div>
+                                <div class="ui-grid-row">
+                                    <p:inputText id="regState" size="30" required="true"/>  
+                                </div>
+
+
+                            </div>
+                            <div class="ui-grid-col-5 " style="float: right">
+                                <div class="ui-grid-row margen">
+                                    <p:outputLabel value="Telefono"/>  
+                                </div>
+                                <div class="ui-grid-row">
+                                    <p:inputMask id="regTel" required="true" mask="(999) 999-99-99"/>
+                                </div>
+                                <div class="ui-grid-row margen">
+                                    <p:outputLabel value="Celular"/>  
+                                </div>
+                                <div class="ui-grid-row">
+                                    <p:inputText id="regCel" size="30" required="true"/>  
+                                </div>
+                                <div class="ui-grid-row margen">
+                                    <p:outputLabel value="Genero"/>  
+                                </div>
+                                <div class="ui-grid-row">
+                                    <p:inputText id="regGender" size="30" required="true"/>  
+                                </div>
+                                <div class="ui-grid-row margen">
+                                    <p:outputLabel value="Fecha De Nacimiento"/>  
+                                </div>
+                                <div class="ui-grid-row">
+                                    <p:calendar pattern="MM-dd-yyyy"  id="regDateBirth"
+                                                required="true"  navigator="true"
+                                                yearRange="c-70:c+10" />
+                                </div>
+                                <div class="ui-grid-row margen">
+                                    <p:outputLabel value="Estado Civil"/>  
+                                </div>
+                                <div class="ui-grid-row">
+                                    <p:inputText  id="regCivil" size="30" required="true" validator="textVal" />  
+                                </div>
+                                <div class="ui-grid-row margen">
+                                    <p:outputLabel value="Codigo Postal"/>  
+                                </div>
+                                <div class="ui-grid-row">
+                                    <p:inputText id="regCP" size="30" required="true"/>  
+                                </div>
+                                <div class="ui-grid-row margen">
+                                    <p:outputLabel value="Ciudad"/>  
+                                </div>
+                                <div class="ui-grid-row">
+                                    <p:inputText id="regCity" size="30" required="true"/>  
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="ui-grid-col-1"></div>
+                    </div>
+                    <div class="ui-grid-row container" style="margin-top: 20px">
+                        <div class="ui-grid-col-2"></div>
+                        <div class="ui-grid-col-2"></div>
+                        <div class="ui-grid-col-8" style="float: right">
+                            <h:panelGrid columns="2" cellspacing="10px">
+                                <p:commandButton value="Cancelar" action="index?faces-redirect=true" immediate="true" />
+                                <p:commandButton value="Siguiente" style="margin-left: 10px" action="register2?faces-redirect=true" update="regNom,regPat,regMat,regMail,regMail2,regDir,regDir2,regState,regTel,regCel,regGender,regDateBirth,regCivil,regCP,regCity"/>
+                            </h:panelGrid>
+                        </div>
+
+                    </div>
+                </p:panel>
+            </h:form>
+        </div>
+
+    </ui:define>
+
+</ui:composition>
